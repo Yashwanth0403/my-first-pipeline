@@ -15,14 +15,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Welcome
-        run: echo "Hello! My first pipeline is running."
+        run: echo "My first CI pipeline is running"
 
       - name: Check application
         run: cat index.html
 
-      - name: Show current directory
-        run: pwd
+      - name: Test application
+        run: grep -q "Hello! My first DevOps pipeline." index.html
 
-      - name: Show files
-        run: ls -la
+      - name: Test successful message
+        run: echo "Application test passed!"
 
